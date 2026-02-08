@@ -18,34 +18,32 @@ const Rooms = [
 
 export default function Hotelcard() {
   return (
-    <div className="bg-gray-100 py-12 px-6">
-      {/* 🔹 Heading Section */}
+    <div id="rooms" className="bg-gray-100 py-16 px-6">
+      {/* Heading */}
       <div className="text-center mb-12">
         <p className="text-orange-500 text-lg font-medium">Luxury Experience</p>
-
         <h1 className="text-4xl md:text-5xl font-bold mt-2">Rooms & Suites</h1>
       </div>
 
-      {/* Grid layout */}
+      {/* Cards */}
       <div className="max-w-6xl mx-auto grid sm:grid-cols-2 md:grid-cols-3 gap-8">
         {Rooms.map((el) => (
           <div
             key={el.id}
             className="relative rounded-2xl overflow-hidden shadow-lg group"
           >
-            {/* Image */}
             <img
               src={el.image}
               alt={el.title}
-              className="w-full h-72 object-cover transition duration-300 group-hover:scale-105"
+              className="w-full h-[450px] object-cover transition duration-300 group-hover:scale-105"
             />
 
-            {/* Dark overlay */}
+            {/* Overlay */}
             <div className="absolute inset-0 bg-black/30"></div>
 
-            {/* Text on image bottom */}
-            <div className="absolute bottom-5 left-5 text-white">
-              <p className="text-bold uppercase tracking-wide">
+            {/* Text */}
+            <div className="absolute bottom-6 left-6 text-white">
+              <p className="text-sm uppercase tracking-wide">
                 From ${el.price} / Night
               </p>
               <h2 className="text-2xl font-semibold">{el.title}</h2>
